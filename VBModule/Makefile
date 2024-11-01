@@ -1,4 +1,4 @@
-TARGET := iphone:clang:15.6:12.2
+TARGET := iphone:clang:latest:12.2
 ARCHS = arm64 arm64e
 INSTALL_TARGET_PROCESSES = SpringBoard
 THEOS_USE_NEW_ABI=1

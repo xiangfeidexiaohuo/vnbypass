@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>CFBundleName</key>
-		<string>vnodebypass Module</string>
+		<string>vnodebypass模块</string>
 		<key>CFBundleExecutable</key>
 		<string>VBModule</string>
 		<key>CFBundleIdentifier</key>

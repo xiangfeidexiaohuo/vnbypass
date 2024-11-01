@@ -1,12 +1,9 @@
 Author: XsF1re, ichitaso, level3tjg
-Maintainer: alias20
+Maintainer: alias20 & daodao
 Package: kr.xsf1re.vnodebypass
-Name: vnodebypass
-Depends: firmware (>= 15.0), firmware (<< 17.0), com.opa334.ccsupport, libkrw0-dopamine (>= 2.0)
-Section: System
-Version: 0.4.2
+Name: vnodebypass 中文版(rootless)
+Depends: mobilesubstrate, firmware (>= 15.0), firmware (<< 17.0), com.opa334.ccsupport, libkrw0-dopamine (>= 2.0)
+Section: 嗨-工具
+Version: 0.4.2-1
 Architecture: iphoneos-arm
-Description: An expermental tool to hide jailbreak files for bypass detection. (Only supported iOS 15-16 with Dopamine2)
-Depiction: https://cydia.ichitaso.com/depiction/vnodebypass.html
-Tag: role::hacker, compatible::ios15, compatible::ios16
-Icon: https://raw.githubusercontent.com/ichitaso/vnodebypass_theme/main/layout/Library/Themes/vnodebypass.theme/Icon.png
+Description: 用于隐藏越狱文件来绕过检测的实验性工具，仅在需要时开启，不要常开，支持iOS15~16的多巴胺2；控制中心有模块，更加方便。

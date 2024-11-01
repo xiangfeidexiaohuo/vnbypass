@@ -1,12 +1,7 @@
-GO_EASY_ON_ME = 1
 DEBUG = 0
 FINALPACKAGE = 1
-
-TARGET := iphone:clang:15.6:14.5
-ARCHS = arm64
-
-THEOS_PACKAGE_SCHEME = rootless
-THEOS_DEVICE_IP = 127.0.0.1 -p 2222
+TARGET := iphone:clang:latest:14.5
+ARCHS = arm64 arm64e
 
 include $(THEOS)/makefiles/common.mk
 

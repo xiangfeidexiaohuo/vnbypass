@@ -88,7 +88,7 @@ int run_as_root(const char* _file, const char** _argv) {
 
   _subtitleLabel = [[UILabel alloc]
       initWithFrame:CGRectMake(0, 100, UIScreen.mainScreen.bounds.size.width, 100)];
-  _subtitleLabel.text = @"USE IT AT YOUR OWN RISK!";
+  _subtitleLabel.text = @"仅在你需要的时候开启！";
   _subtitleLabel.textAlignment = NSTextAlignmentCenter;
   _subtitleLabel.textColor = UIColor.whiteColor;
   _subtitleLabel.font = [UIFont systemFontOfSize:20];
@@ -97,7 +97,7 @@ int run_as_root(const char* _file, const char** _argv) {
   _button = [UIButton buttonWithType:UIButtonTypeSystem];
   _button.frame = CGRectMake(UIScreen.mainScreen.bounds.size.width / 2 - 30,
                              UIScreen.mainScreen.bounds.size.height / 2 - 25, 60, 50);
-  [_button setTitle:access("/var/jb/bin/bash", F_OK) == 0 ? @"Enable" : @"Disable"
+  [_button setTitle:access("/var/jb/bin/bash", F_OK) == 0 ? @"启用" : @"禁用"
            forState:UIControlStateNormal];
   [_button addTarget:self
                 action:@selector(buttonPressed:)
@@ -125,8 +125,8 @@ int run_as_root(const char* _file, const char** _argv) {
     run_as_root(launchPath.UTF8String, args2);
   }
 
-  NSString *title = access("/var/jb/bin/bash", F_OK) == 0 ? @"Enable" : @"Disable";
-  NSString *successTitle = (access("/var/jb/bin/bash", F_OK) == 0) == disabled ? @"Failed" : @"Success";
+  NSString *title = access("/var/jb/bin/bash", F_OK) == 0 ? @"启用" : @"禁用";
+  NSString *successTitle = (access("/var/jb/bin/bash", F_OK) == 0) == disabled ? @"失败" : @"成功";
   [_button setTitle:successTitle forState:UIControlStateNormal];
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     sleep(1);

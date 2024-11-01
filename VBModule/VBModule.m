@@ -76,9 +76,9 @@ int run_as_root(const char* _file, const char** _argv) {
 -(UIAlertController *)showProgress:(BOOL)selected{
 
     NSString *plzwait = @"";
-    if(selected) plzwait = @"Hiding";
-    else  plzwait = @"Revealing";
-    plzwait = [NSString stringWithFormat:@"%@ files...", plzwait];
+    if(selected) plzwait = @"隐藏";
+    else  plzwait = @"显示";
+    plzwait = [NSString stringWithFormat:@"%@ 文件中...", plzwait];
 
 
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
@@ -97,7 +97,7 @@ int run_as_root(const char* _file, const char** _argv) {
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
 
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的"
                                                        style:UIAlertActionStyleDefault
                                                      handler:nil];
 
@@ -163,15 +163,15 @@ int run_as_root(const char* _file, const char** _argv) {
 
             if(selected) {
                 if(access("/var/jb/bin/bash", F_OK) == 0) {
-                    [self showAlert:@"vnodebypass" msg:@"Failed to hide files, please install libkrw/libkernrw or try again in a minute. If the error persists, reboot."];
+                    [self showAlert:@"vnodebypass" msg:@"隐藏文件失败，请安装 libkrw/libkernrw 或稍后重试。如果仍然存​​在错误，请注销。"];
                 } else {
-                    [self showAlert:@"vnodebypass" msg:@"Successfully hide files."];
+                    [self showAlert:@"vnodebypass" msg:@"成功隐藏文件"];
                 }
             } else {
                 if(access("/var/jb/bin/bash", F_OK) != 0) {
-                    [self showAlert:@"vnodebypass" msg:@"Failed to reveal files, try again in a minute. If the error persists, reboot."];
+                    [self showAlert:@"vnodebypass" msg:@"无法显示文件，请稍后重试。如果仍然存​​在错误，请注销。"];
                 } else {
-                    [self showAlert:@"vnodebypass" msg:@"Successfully revealed files."];
+                    [self showAlert:@"vnodebypass" msg:@"成功显示文件"];
                 }
             }
     //     });
